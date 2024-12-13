@@ -46,7 +46,7 @@ pub fn packable_fmt_fields(f: &mut Formatter, packed_bytes: &[u8], fields: &[Deb
     let max_field_length_name = fields.iter().map(|x| x.name.len()).max().unwrap();
 	let max_bit_width = fields.iter().map(|x| x.bits.len()).max().unwrap();
 
-    if max_bit_width > 32 {
+    if max_bit_width > 64 {
         for field in fields {
             write!(f, "{name:>0$} | {base_value:?}\r\n",
                         max_field_length_name + 1,
